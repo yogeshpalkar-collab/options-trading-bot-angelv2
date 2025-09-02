@@ -4,11 +4,8 @@ import pandas as pd
 import streamlit as st
 import os
 
-# ✅ Bulletproof SmartAPI import for Render
-try:
-    from SmartApi.smartConnect import SmartConnect
-except ImportError:
-    from smartapi.smartConnect import SmartConnect
+# ✅ Final correct import for Render/Linux
+from SmartApi.smartConnect import SmartConnect
 
 # ==============================
 # CONFIG
@@ -29,4 +26,4 @@ def login_angel(api_key, client_id, password, totp):
     session = obj.generateSession(client_id, password, totp)
     return obj, session
 
-# (rest of the bot unchanged — strategy, indicators, trade log, dashboard, etc.)
+# (rest of bot logic same as before: indicators, trading logic, dashboard, etc.)
