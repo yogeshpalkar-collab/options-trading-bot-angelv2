@@ -3,10 +3,9 @@ import time
 import pandas as pd
 import streamlit as st
 import os
-import importlib
 
-# ✅ Bypass SmartApi/__init__.py issue
-SmartConnect = importlib.import_module("SmartApi.smartConnect").SmartConnect
+# ✅ Final clean import for SmartAPI
+from SmartApi.smartConnect import SmartConnect
 
 # ==============================
 # CONFIG
