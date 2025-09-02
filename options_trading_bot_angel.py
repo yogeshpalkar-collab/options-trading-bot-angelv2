@@ -2,6 +2,7 @@ import datetime
 import time
 import pandas as pd
 import streamlit as st
+import os
 from smartapi import SmartConnect
 
 # ==============================
@@ -250,20 +251,22 @@ def run_bot(api, instruments, symbol="NIFTY", expiry=None, paper_trade=True):
 def main():
     st.title("Options Trading Bot (Angel One) - NIFTY Only")
 
+    # Secrets from environment variables
+    MASTER_PASSWORD = os.getenv("MASTER_PASSWORD")
+    API_KEY = os.getenv("API_KEY")
+    CLIENT_ID = os.getenv("CLIENT_ID")
+    PASSWORD = os.getenv("PASSWORD")
+    TOTP = os.getenv("TOTP")
+
     # Master password check
     input_password = st.text_input("Enter Master Password", type="password")
-    if input_password != st.secrets["MASTER_PASSWORD"]:
+    if input_password != MASTER_PASSWORD:
         st.warning("Please enter the correct master password to continue.")
         st.stop()
 
     # Paper/Live toggle
     trade_mode = st.radio("Select Mode", ["Paper Trading", "Live Trading"], index=0)
     paper_trade = (trade_mode == "Paper Trading")
-
-    API_KEY = st.secrets["API_KEY"]
-    CLIENT_ID = st.secrets["CLIENT_ID"]
-    PASSWORD = st.secrets["PASSWORD"]
-    TOTP = st.secrets["TOTP"]
 
     api, session = login_angel(API_KEY, CLIENT_ID, PASSWORD, TOTP)
     instruments = fetch_instruments(api)

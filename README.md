@@ -1,4 +1,4 @@
-# Options Trading Bot (Angel One) - NIFTY Only (Secure v3)
+# Options Trading Bot (Angel One) - NIFTY Only (Secure v3 Render)
 
 ## Features
 - Trades **NIFTY only**
@@ -22,19 +22,25 @@
    ```bash
    pip install -r requirements.txt
    ```
-3. Create a `.streamlit/secrets.toml` file with your credentials:
-   ```toml
-   MASTER_PASSWORD = "your_strong_password"
-   API_KEY = "your_api_key"
-   CLIENT_ID = "your_client_id"
-   PASSWORD = "your_password"
-   TOTP = "your_totp"
+3. Add environment variables in Render or locally:
+   ```bash
+   MASTER_PASSWORD=your_strong_password
+   API_KEY=your_api_key
+   CLIENT_ID=your_client_id
+   PASSWORD=your_password
+   TOTP=your_totp
    ```
 4. Run locally:
    ```bash
    streamlit run options_trading_bot_angel.py
    ```
 
-## Deployment
-- Upload to GitHub → Deploy on Streamlit Cloud (recommended) or Render.
-- Add the same secrets (`MASTER_PASSWORD`, `API_KEY`, etc.) in deployment settings.
+## Deployment (Render)
+- Build Command:
+  ```bash
+  pip install -r requirements.txt
+  ```
+- Start Command:
+  ```bash
+  streamlit run options_trading_bot_angel.py --server.port 10000 --server.address 0.0.0.0
+  ```
