@@ -1,10 +1,9 @@
-# Options Trading Bot (Angel One) - NIFTY Only (Secure v3 Render PyPI Clean)
+# Options Trading Bot (Angel One) - NIFTY Only (Secure v3 Render Importlib Fix)
 
 ## Features
 - ✅ Uses stable PyPI package (smartapi-python==1.3.0)
-- ✅ Imports SmartConnect directly from SmartApi/smartConnect.py
-- ✅ No lowercase import, no try/except, no GitHub dependency
-- ✅ Clean deployment on Render (Linux safe)
+- ✅ Import bypass using importlib (avoids SmartApi/__init__.py error on Render/Linux)
+- Clean deployment on Render
 - Strategy: ATR+10 SL, TSL, Target, Max 3 trades/day, expiry dropdown, bias dashboard, trade log, master password, paper/live toggle
 
 ## Setup
@@ -21,4 +20,4 @@
   streamlit run options_trading_bot_angel.py --server.port 10000 --server.address 0.0.0.0
   ```
 
-⚠️ Make sure to **Clear Build Cache** on Render before redeploying, so old versions of your bot are not reused.
+⚠️ Reminder: Always **Clear Build Cache** on Render before redeploying.

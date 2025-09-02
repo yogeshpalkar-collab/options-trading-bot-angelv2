@@ -3,9 +3,10 @@ import time
 import pandas as pd
 import streamlit as st
 import os
+import importlib
 
-# ✅ Final correct import for Render/Linux
-from SmartApi.smartConnect import SmartConnect
+# ✅ Bypass SmartApi/__init__.py issue
+SmartConnect = importlib.import_module("SmartApi.smartConnect").SmartConnect
 
 # ==============================
 # CONFIG
@@ -26,4 +27,4 @@ def login_angel(api_key, client_id, password, totp):
     session = obj.generateSession(client_id, password, totp)
     return obj, session
 
-# (rest of bot logic same as before: indicators, trading logic, dashboard, etc.)
+# (rest of bot logic unchanged — indicators, trading logic, dashboard, etc.)
