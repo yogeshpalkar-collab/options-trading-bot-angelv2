@@ -1,4 +1,4 @@
-# Options Trading Bot (Angel One) - NIFTY Only (Secure v3 Render)
+# Options Trading Bot (Angel One) - NIFTY Only (Secure v3 Render Fixed)
 
 ## Features
 - Trades **NIFTY only**

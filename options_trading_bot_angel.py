@@ -3,7 +3,7 @@ import time
 import pandas as pd
 import streamlit as st
 import os
-from smartapi import SmartConnect
+from SmartApi import SmartConnect
 
 # ==============================
 # CONFIG
