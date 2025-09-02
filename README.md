@@ -1,4 +1,4 @@
-# Options Trading Bot (Angel One) - NIFTY Only (Secure v3 Render Final Import Fix)
+# Options Trading Bot (Angel One) - NIFTY Only (Secure v3 Render Import Patch)
 
 ## Features
 - Trades **NIFTY only**
@@ -15,6 +15,7 @@
 - 🔒 Master password protection
 - 📊 Bias Dashboard (Bullish / Bearish / Neutral with reasons)
 - 📑 Trade Log Table (today’s trades only)
+- Robust import patch for Angel SmartAPI (handles SmartApi/smartapi mismatch)
 
 ## Setup
 1. Clone or unzip this project.

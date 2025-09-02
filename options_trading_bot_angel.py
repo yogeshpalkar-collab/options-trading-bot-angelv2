@@ -3,7 +3,12 @@ import time
 import pandas as pd
 import streamlit as st
 import os
-from SmartApi import SmartConnect
+
+# Robust import patch for Angel SmartAPI inconsistency
+try:
+    from SmartApi import SmartConnect
+except ImportError:
+    from smartapi.smartConnect import SmartConnect
 
 # ==============================
 # CONFIG
